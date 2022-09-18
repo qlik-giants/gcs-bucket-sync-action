@@ -1,5 +1,5 @@
 # GCS Bucket Sync Action
-This action helps by easily syncing a Github repository with a Google Cloud Storage bucket. It is very generic and can be used for different purposes. I used it for uploading my static website.
+This action syncs the Github repository with a given Google Cloud Storage bucket. A folder at the bucket root will be created with the repo name to receive the files.
 
 ## Features
 - [X] Sync files/directories from your repository to your bucket
@@ -16,7 +16,6 @@ _\*If you want to sync to an exiting bucket, make sure that your repository incl
 ## Inputs
 - `secrets` Your Google service account credentials as json. _**(Required)**_
 - `bucket` Name of the target bucket. _**(Required)**_
-- `sync_dir` Directory path to sync, relative to bucket, for example, `my_folder/to_sync`. It is empty by default.
 - `exclude` Regex for excluding files/dirs. ([gsutil rsync doc](https://cloud.google.com/storage/docs/gsutil/commands/rsync))
 
 ## Example
@@ -40,7 +39,7 @@ jobs:
         uses: patrickwyler/gcs-bucket-sync-action@1.3
         with:
           secrets: ${{ secrets.google_service_account_credentials }}
-          bucket: 'patrickwyler.com'
+          bucket: 'qlik-giants-github'
           exclude: '.*\.md$|\.gitignore$|\.git/.*$|\.github/.*$'
 
 ```
