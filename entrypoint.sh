@@ -5,7 +5,7 @@ gcloud auth activate-service-account --key-file=/secrets.json
 rm /secrets.json
 
 #identify bucket name
-BUCKET=$(echo $GITHUB_HEPOSITORY| cut -d'/' -f 2)
+BUCKET=$(echo $GITHUB_REPOSITORY| cut -d'/' -f 2)
 
 # Sync files to bucket
 echo "Syncing bucket $BUCKET ..."
