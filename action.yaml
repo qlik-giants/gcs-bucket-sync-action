@@ -1,6 +1,6 @@
-name: 'Google Cloud Storage Bucket Sync (GCP,GCS)'
-description: 'Sync a Github repository with a Google Cloud Storage (GCS) bucket'
-author: 'Patrick Wyler'
+name: 'Sync repo to GCS bucket under forlder with repo name'
+description: 'Sync a Github repository with folder on a given Google Cloud Storage (GCS) bucket. The folder name is the repo name.'
+author: 'jmbenedetto'
 
 inputs:
   secrets:
